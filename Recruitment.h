@@ -19,5 +19,7 @@ public:
     int getNumOfPeople() const;
     string getDueDate() const;
 
+    tuple<string, int, string, int, string> getRecruiment();
 };
+
 #endif
