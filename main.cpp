@@ -59,8 +59,9 @@ void doTask() {
 
     while (!isProgramExit) {
         // 입력 파일에서 메뉴 숫자 2개 읽기
-        fscanf(inFp, "%d %d ", &menuLevel1, &menuLevel2);
+//        fscanf(inFp, "%d %d ", &menuLevel1, &menuLevel2);
 
+        cout << "test입력" << endl;
         cin >> menuLevel1 >> menuLevel2; //test용 입력
 
         // 메뉴 구분 및 해당 연산 수행
@@ -71,7 +72,7 @@ void doTask() {
                 switch (menuLevel2)
                 {
                     case 1:		// 1.1 회원 가입
-                    {
+                     {
                         int devideMemberType;
                         string name;
                         int number;
@@ -87,6 +88,7 @@ void doTask() {
                         break;
                     }
                 }
+                break;
             }
             case 2:
             {
@@ -98,6 +100,7 @@ void doTask() {
                         string password;
                         cin >> id >> password;
                         currentMember = Member(id, password);
+                        currentMember.setStatus(true);
                         signInUi.putUserDetails(id, password);
                         break;
                     }
@@ -107,20 +110,20 @@ void doTask() {
                         break;
                     }
                 }
+                break;
             }
-            case 3:
-            {
-                switch (menuLevel2)
-                {
-                    case 1:		// 3.1 채용 정보 등록
+            case 3: {
+                switch (menuLevel2) {
+                    case 1:        // 3.1 채용 정보 등록
                     {
                         break;
                     }
-                    case 2:		//3.2 등록된 채용 정보 조회
+                    case 2:        //3.2 등록된 채용 정보 조회
                     {
                         break;
                     }
                 }
+            }
                 case 4:
                 {
                     switch (menuLevel2)
@@ -158,6 +161,7 @@ void doTask() {
                             break;
                         }
                     }
+                    break;
                 }
                 case 5:
                 {
@@ -168,8 +172,10 @@ void doTask() {
                             break;
                         }
                     }
+                    break;
                 }
                 case 6:
+                {
                     switch (menuLevel2) {
                         case 1:		// 6.1 종료
                         {
@@ -178,11 +184,12 @@ void doTask() {
                             break;
                         }
                     }
-            }
-
+                    break;
+                }
         }
     }
 }
+
 
 void programExit() {
 
