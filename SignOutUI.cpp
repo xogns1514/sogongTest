@@ -4,5 +4,5 @@
 using namespace std;
 
 void SignOutUI::signOutUI(Member &member) {
-
+    SignOut::signOut(member);
 }

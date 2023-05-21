@@ -103,7 +103,7 @@ void doTask() {
                     }
                     case 2:		// 2.2 로그아웃
                     {
-
+                        signOutUi.signOutUI(currentMember);
                         break;
                     }
                 }

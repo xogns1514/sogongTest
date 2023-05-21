@@ -2,12 +2,10 @@
 #include "SignOutUI.h"
 #include <iostream>
 
-Member* currentMember = nullptr;
-
-void SignOut::signOut(Member& member){
+void SignOut::signOut(Member& currentMember){
     //로그아웃
-    if(currentMember != nullptr){
-        currentMember = nullptr;
+    if(currentMember.getStatus()){
+        currentMember.setStatus(false);
         cout << "로그아웃 되었습니다. " << endl;
     }
     else{
