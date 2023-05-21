@@ -9,6 +9,7 @@ class Member{
 private:
     string id;
     string password;
+    bool status;
 
 public:
     Member(const string& id, const string& password);

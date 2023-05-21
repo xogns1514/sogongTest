@@ -4,7 +4,7 @@
 
 Member* currentMember = nullptr;
 
-void SignOut::signOut(){
+void SignOut::signOut(Member& member){
     //로그아웃
     if(currentMember != nullptr){
         currentMember = nullptr;

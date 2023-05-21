@@ -9,7 +9,7 @@
  */
 class SignIn {
 public:
-    Member putUserDetails(string id, string password);
+    string putUserDetails(string id, string password);
 };
 
 

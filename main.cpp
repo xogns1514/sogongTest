@@ -97,11 +97,13 @@ void doTask() {
                         string id;
                         string password;
                         cin >> id >> password;
-                        currentMember = signInUi.putUserDetails(id, password);
+                        currentMember = Member(id, password);
+                        signInUi.putUserDetails(id, password);
                         break;
                     }
                     case 2:		// 2.2 로그아웃
                     {
+
                         break;
                     }
                 }

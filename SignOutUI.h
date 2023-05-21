@@ -2,9 +2,10 @@
 #define SIGN_OUT_UI_H
 
 #include <string>
+#include "Member.h"
 
 class SignOutUI{
 public:
-    static void signOutUI();
+    static void signOutUI(Member& member);
 };
 #endif

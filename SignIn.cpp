@@ -2,7 +2,7 @@
 /*
  * 로그인 함수
  */
-Member SignIn::putUserDetails(string id, string password)
+string SignIn::putUserDetails(string id, string password)
 {
     // 로그인
     Member member = *new Member(id, password);
