@@ -1,9 +1,15 @@
 #include <iostream>
 #include <string.h>
 #include <vector>
+#include "SignUpUI.h"
+#include "SignInUI.h"
 #include "SignOutUI.h"
+#include "WithDrawalUI.h"
+
 #include "AddRecruitmentUI.h"
 #include "ShowRecruitmentUI.h"
+
+
 #include "Member.h"
 
 using namespace std;
@@ -21,9 +27,13 @@ void programExit();
 FILE* inFp, * outFp;
 
 //boundary class 변수 선언
+SignUpUI signUpUi;
+SignInUI signInUi;
 SignOutUI signOutUi;
+WithDrawalUI withDrawalUi;
 AddRecruitmentUI addRecruitmentUi;
 ShowRecruitmentUI showRecruitmentUi;
+
 
 int main() {
     cout << "Hello, World!" << std::endl;
@@ -51,6 +61,8 @@ void doTask() {
         // 입력 파일에서 메뉴 숫자 2개 읽기
         fscanf(inFp, "%d %d ", &menuLevel1, &menuLevel2);
 
+        cin >> menuLevel1 >> menuLevel2; //test용 입력
+
         // 메뉴 구분 및 해당 연산 수행
         switch (menuLevel1)
         {
@@ -60,10 +72,18 @@ void doTask() {
                 {
                     case 1:		// 1.1 회원 가입
                     {
+                        int devideMemberType;
+                        string name;
+                        int number;
+                        string id;
+                        string password;
+                        cin >> devideMemberType >> name >> number >> id >> password;
+                        signUpUi.putUserDetails(devideMemberType, name, number, id, password);
                         break;
                     }
                     case 2:		// 1.2 회원 탈퇴
                     {
+                        withDrawalUi.clickWithdrawal(currentMember);
                         break;
                     }
                 }
@@ -74,6 +94,10 @@ void doTask() {
                 {
                     case 1:		// 2.1 로그인
                     {
+                        string id;
+                        string password;
+                        cin >> id >> password;
+                        currentMember = signInUi.putUserDetails(id, password);
                         break;
                     }
                     case 2:		// 2.2 로그아웃
