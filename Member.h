@@ -20,5 +20,8 @@ public:
     //ID, Password validation
     bool ValidateMember(const string& inputId, const string& inputPassword);
 
+    string validate();
+
+    void saveMember(int i);
 };
 #endif
