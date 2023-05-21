@@ -3,8 +3,6 @@
 
 using namespace std;
 
-void SignOutUI::signOutUI(){
-    //로그아웃
-    
-    SignOut::signOut();
+void SignOutUI::signOutUI(Member &member) {
+    SignOut::signOut(member);
 }

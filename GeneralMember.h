@@ -7,10 +7,9 @@
 class GeneralMember : public Member{
 private:
     string name;
-    string residentId;
+    int residentId;
 
 public:
-    GeneralMember(const string& id, const string& password, const string& name, const string& residentId);
-    
+    GeneralMember(const string &id, const string &password, const string &name, const int &residentId);
 };
 #endif
