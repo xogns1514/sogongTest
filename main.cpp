@@ -9,6 +9,7 @@
 #include "AddRecruitmentUI.h"
 #include "ShowRecruitmentUI.h"
 
+#include "SearchEmploymentUI.h"
 
 #include "Member.h"
 
@@ -33,6 +34,8 @@ SignOutUI signOutUi;
 WithDrawalUI withDrawalUi;
 AddRecruitmentUI addRecruitmentUi;
 ShowRecruitmentUI showRecruitmentUi;
+SearchEmploymentUI searchEmploymentUi;
+
 
 
 int main() {
@@ -126,6 +129,7 @@ void doTask() {
                         break;
                     }
                 }
+                break;
             }
                 case 4:
                 {
@@ -133,10 +137,12 @@ void doTask() {
                     {
                         case 1:		// 4.1 채용 정보 검색
                         {
-//                            string company_name;
+                            string company_name;
+                            cout << "회사이름" << endl;
+                            cin >> company_name;
 //                            fscanf(inFp, "%s", company_name);
-//                            searchEmploymentUI.SearchByCompanyName(company_name, recruitment);
-//                            break;
+                            searchEmploymentUi.SearchByCompanyName(company_name, recruitment);
+                            break;
                         }
                         case 2:		// 4.2 채용 지원
                         {

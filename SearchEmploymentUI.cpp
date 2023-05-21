@@ -5,8 +5,8 @@ SearchEmploymentUI::SearchEmploymentUI(){
 }
 
 // 4.1 ä�� ���� �˻�
-void SearchEmploymentUI::SearchByCompanyName(string company_name, vector<Recruitment>& recruitment) {
-    searchEmployment.ShowEmploymentlist(company_name, recruitment);
+ void SearchEmploymentUI::SearchByCompanyName(string company_name, vector<Recruitment>& recruitment) {
+    SearchEmployment::ShowEmploymentlist(company_name, recruitment);
 }
 
 // 4.2 ä�� ����

@@ -9,7 +9,7 @@ void SearchEmployment::ShowEmploymentlist(string company_name, vector<Recruitmen
     {
         tuple<string, int, string, int, string> a;
         a = recruitment[i].getRecruiment();
-        if (get<0>(a) == company_name)
+        if (get<0>(a).compare(company_name) == 0)
         {
             cout << get<0>(a) << get<1>(a) << get<2>(a) << get<3>(a) << get<4>(a) << endl;
         }
