@@ -7,7 +7,7 @@
 
 class ManageRecruitment {
 public:
-    static void addNewRecruitment(const string& work, const int& numOfPeople, const string& dueDate);
-    static void showRecruitmentDetail();
+    static void addNewRecruitment(vector<Recruitment>& recruitments, const string& work, const int& numOfPeople, const string& dueDate);
+    static void showRecruitmentDetail(vector<Recruitment>& recruitments);
 };
 #endif
