@@ -3,9 +3,10 @@
 
 #include <string>
 #include "Recruitment.h"
+#include "CompanyMember.h"
 
 class AddRecruitmentUI {
 public:
-    static void createNewRecruitment(vector<Recruitment>& recruitments);
+    static void createNewRecruitment(vector<Recruitment>& recruitments, Member& company);
 };
 #endif

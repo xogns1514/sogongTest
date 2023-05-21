@@ -4,8 +4,10 @@
 
 using namespace std;
 
-void ManageRecruitment::addNewRecruitment(vector<Recruitment>& recruitments, const string& work, const int& numOfPeople, const string& dueDate){
-    Recruitment newRecruitment(work, numOfPeople, dueDate);
+void ManageRecruitment::addNewRecruitment(vector<Recruitment> &recruitments, const std::string &companyName,
+                                          const int &companyNumber, const std::string &work, const int &numOfPeople,
+                                          const std::string &dueDate) {
+    Recruitment newRecruitment(companyName, companyNumber, work, numOfPeople, dueDate);
     recruitments.push_back(newRecruitment);
 }
 
