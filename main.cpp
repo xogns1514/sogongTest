@@ -37,14 +37,15 @@ int main() {
     return 0;
 }
 
-void doTask(){
+void doTask() {
     // 메뉴 파싱을 위한 level 구분을 위한 변수
     int menuLevel1 = 0, menuLevel2 = 0;
     int isProgramExit = 0;
 
+
     vector<Member> member;
 
-    Member currentMember("0", "0");
+    Member currentMember("0", "0"); // 로그인 후 여기에 현재 로그인 중인 회원 저장
 
     while (!isProgramExit) {
         // 입력 파일에서 메뉴 숫자 2개 읽기
@@ -103,7 +104,7 @@ void doTask(){
 //                            string company_name;
 //                            fscanf(inFp, "%s", company_name);
 //                            searchEmploymentUI.SearchByCompanyName(company_name, recruitment);
-                            break;
+//                            break;
                         }
                         case 2:		// 4.2 채용 지원
                         {
@@ -156,5 +157,7 @@ void doTask(){
         }
     }
 }
+
+void programExit() {
 
 }

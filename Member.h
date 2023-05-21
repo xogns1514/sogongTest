@@ -23,5 +23,7 @@ public:
     string validate();
 
     void saveMember(int i);
+
+    void deleteMember();
 };
 #endif

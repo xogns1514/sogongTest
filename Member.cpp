@@ -14,3 +14,7 @@ string Member::validate() {
 void Member::saveMember(int i) {
 
 }
+
+void Member::deleteMember() {
+
+}
