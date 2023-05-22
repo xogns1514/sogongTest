@@ -11,7 +11,6 @@ class SignUpUI
 {
 private:
     SignUp signUp;
-
 public:
     SignUpUI();
 //    void putUserDetails(int devideMemberType, string name, int number, string id, string password);

@@ -11,9 +11,13 @@ string Member::getPassword() const { return password; }
 bool Member::getStatus() const { return status; }
 void Member::setStatus(bool status) { this->status = status; }
 
-
-string Member::validate() {
-    return std::string();
+bool Member::validate(vector<Member>& members, const std::string &inputId, const std::string &inputPassword) {
+    for(Member i : members){
+        if(i.getID() == inputId){
+            return false;
+        }
+    }
+    return true;
 }
 
 void Member::saveMember(int i) {

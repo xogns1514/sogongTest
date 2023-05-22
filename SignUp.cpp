@@ -13,6 +13,7 @@ void SignUp::putUserDetails(vector<Member>& member, int devideMemberType, string
         CompanyMember companyMember(id, password, name, number);
         companyMember.saveMember(devideMemberType);
         member.push_back(companyMember);
+        cout << "회사회원 가입 완료" << companyMember.getID() << " " << companyMember.getPassword() << endl;
 
     }
         // 일반회원 가입

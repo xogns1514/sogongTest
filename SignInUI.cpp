@@ -5,7 +5,7 @@ SignInUI::SignInUI() : signIn(){}
 /*
  * 로그인 boundary class
  */
-void SignInUI::putUserDetails(string id, string password)
+void SignInUI::putUserDetails(vector<Member>& member, Member& currentMember, string id, string password)
 {
-    signIn.putUserDetails(id, password);
+    SignIn::putUserDetails(member,currentMember, id, password);
 }
