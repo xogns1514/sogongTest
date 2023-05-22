@@ -11,5 +11,7 @@ private:
 
 public:
     GeneralMember(const string &id, const string &password, const string &name, const int &residentId);
+
+    string getType() const;
 };
 #endif

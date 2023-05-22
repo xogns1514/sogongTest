@@ -15,5 +15,7 @@ public:
 
     string getCompanyName() const;
     int getCompanyNumber() const;
+
+    string getType() const;
 };
 #endif

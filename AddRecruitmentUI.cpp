@@ -6,6 +6,7 @@ using namespace std;
 
 void AddRecruitmentUI::createNewRecruitment(vector<Recruitment>& recruitments, Member& company){
     const CompanyMember companyMember = static_cast<const CompanyMember&> (company);
+
     string companyName = companyMember.getCompanyName();
 
     cout << "회사이름" << companyMember.getCompanyName() << endl;

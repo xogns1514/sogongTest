@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Member.h"
 
-Member::Member(const string& id, const string& password) : id(id), password(password), status(false){};
+Member::Member(const string& type, const string& id, const string& password) : type(type), id(id), password(password), status(false){};
 
 
 string Member::getID() const { return id; }
@@ -26,4 +26,9 @@ void Member::saveMember(int i) {
 
 void Member::deleteMember() {
 
+}
+
+string Member::getType() const {
+    if(this->type == "CompanyMember") return "CompanyMember";
+    else if (this->type == "GeneralMember") return "GeneralMember";
 }

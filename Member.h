@@ -9,10 +9,11 @@ class Member{
 private:
     string id;
     string password;
+    string type;
     bool status;
 
 public:
-    Member(const string& id, const string& password);
+    Member(const string& type, const string& id, const string& password);
 
     string getID() const;
     string getPassword() const;
@@ -25,5 +26,7 @@ public:
 
     void saveMember(int i);
     void deleteMember();
+
+    string getType() const;
 };
 #endif
