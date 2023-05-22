@@ -15,6 +15,7 @@ private:
 public:
     Recruitment(const string& companyName, const int& companyNumber, const string& work, const int& numOfPeople, const string& dueDate);
 
+    string getCompanyName() const;
     string getWork() const;
     int getNumOfPeople() const;
     string getDueDate() const;

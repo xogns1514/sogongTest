@@ -18,8 +18,9 @@ void ManageRecruitment::showRecruitmentDetail(vector<Recruitment>& recruitments)
     else {
         for(Recruitment i : recruitments){
             cout 
-            << "{ " 
-            <<  "["<<i.getWork() << "] " 
+            << "{ "
+            << "[회사이름: " << i.getCompanyName() << "]"
+            <<  "[" <<i.getWork() << "] "
             << "["<<i.getNumOfPeople() << "] "
             << "[" << i.getDueDate() << "] "
             << "}" << endl;

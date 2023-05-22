@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include "Member.h"
+#include "CompanyMember.h"
+#include "GeneralMember.h"
 
 /*
  * 로그인을 처리하는 control class

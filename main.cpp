@@ -57,9 +57,12 @@ void doTask() {
 
 
     vector<Member> member;
+    vector<CompanyMember> companyMembers;
+    vector<GeneralMember> generalMembers;
+
     vector<Recruitment> recruitment;
 
-    Member currentMember("0", "0"); // 로그인 후 여기에 현재 로그인 중인 회원 저장
+    Member currentMember("none", "0", "0"); // 로그인 후 여기에 현재 로그인 중인 회원 저장
 
     while (!isProgramExit) {
         // 입력 파일에서 메뉴 숫자 2개 읽기
@@ -103,8 +106,6 @@ void doTask() {
                         string id;
                         string password;
                         cin >> id >> password;
-                        currentMember = Member(id, password);
-                        currentMember.setStatus(true);
                         signInUi.putUserDetails(member, currentMember,  id, password);
                         break;
                     }
