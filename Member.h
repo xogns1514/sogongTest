@@ -15,6 +15,9 @@ private:
 public:
     Member(const string& type, const string& id, const string& password);
 
+    virtual string getName() const { return "0";};
+    virtual int getNumber() const { return 0;};
+
     string getID() const;
     string getPassword() const;
 

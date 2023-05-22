@@ -57,6 +57,9 @@ void doTask() {
 
 
     vector<Member> member;
+    vector<CompanyMember> companyMembers;
+    vector<GeneralMember> generalMembers;
+
     vector<Recruitment> recruitment;
 
     Member currentMember("none", "0", "0"); // 로그인 후 여기에 현재 로그인 중인 회원 저장

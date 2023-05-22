@@ -5,15 +5,14 @@
 using namespace std;
 
 void AddRecruitmentUI::createNewRecruitment(vector<Recruitment>& recruitments, Member& company){
-    const CompanyMember companyMember = static_cast<const CompanyMember&> (company);
 
-    string companyName = companyMember.getCompanyName();
+    string companyName = company.getName();
 
-    cout << "회사이름" << companyMember.getCompanyName() << endl;
+    cout << "회사이름" << company.getName() << endl;
 
-    int companyNumber = companyMember.getCompanyNumber();
+    int companyNumber = company.getNumber();
 
-    cout << "회사 번호" << companyMember.getCompanyNumber() << endl;
+    cout << "회사 번호" << company.getNumber() << endl;
 
     //채용 정보 입력 받기
     string work;

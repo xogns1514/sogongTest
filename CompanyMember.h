@@ -13,7 +13,9 @@ public:
 
     CompanyMember(const string &id, const string &password, const string &companyName, int companyNumber);
 
-    string getCompanyName() const;
+    string getName() const override;
+    int getNumber() const override;
+
     int getCompanyNumber() const;
 
     string getType() const;
