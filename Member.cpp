@@ -3,6 +3,13 @@
 
 Member::Member(const string& type, const string& id, const string& password) : type(type), id(id), password(password), status(false){};
 
+Member::Member(const std::string &type, const std::string &name, const int &number, const std::string &id,
+               const std::string &password)
+               :type(type), name(name), number(number), id(id), password(password){};
+
+string Member::getName() { return name; }
+
+int Member::getNumber() { return number; }
 
 string Member::getID() const { return id; }
 

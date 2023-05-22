@@ -13,7 +13,7 @@ void SignIn::putUserDetails(vector<Member> &members, Member &currentMember, std:
                 currentMember = i;
                 currentMember.setStatus(true);
                 cout << i.getID() << " " << i.getPassword() << endl;
-                cout << "현재 로그인 회원: " << i.getID() << endl;
+                cout << "현재 로그인 회원: " << currentMember.getName() << currentMember.getID() << endl;
                 break;
             }
 
