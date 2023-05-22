@@ -1,11 +1,12 @@
 #ifndef SHOW_RECRUITMENT_UI_H
 #define SHOW_RECRUITMENT_UI_H
 
-#include <string>
+#include <vector>
+#include "Recruitment.h"
 
 class ShowRecruitmentUI {
 public:
-    static void startInterface();
+    static void startInterface(vector<Recruitment>& recruitment);
 };
 
 #endif 

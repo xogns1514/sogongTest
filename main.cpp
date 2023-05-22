@@ -9,6 +9,7 @@
 #include "AddRecruitmentUI.h"
 #include "ShowRecruitmentUI.h"
 
+#include "SearchEmploymentUI.h"
 
 #include "Member.h"
 
@@ -33,6 +34,8 @@ SignOutUI signOutUi;
 WithDrawalUI withDrawalUi;
 AddRecruitmentUI addRecruitmentUi;
 ShowRecruitmentUI showRecruitmentUi;
+SearchEmploymentUI searchEmploymentUi;
+
 
 
 int main() {
@@ -54,6 +57,7 @@ void doTask() {
 
 
     vector<Member> member;
+    vector<Recruitment> recruitment;
 
     Member currentMember("0", "0"); // 로그인 후 여기에 현재 로그인 중인 회원 저장
 
@@ -116,13 +120,16 @@ void doTask() {
                 switch (menuLevel2) {
                     case 1:        // 3.1 채용 정보 등록
                     {
+                        addRecruitmentUi.createNewRecruitment(recruitment, currentMember);
                         break;
                     }
                     case 2:        //3.2 등록된 채용 정보 조회
                     {
+                        showRecruitmentUi.startInterface(recruitment);
                         break;
                     }
                 }
+                break;
             }
                 case 4:
                 {
@@ -130,10 +137,12 @@ void doTask() {
                     {
                         case 1:		// 4.1 채용 정보 검색
                         {
-//                            string company_name;
+                            string company_name;
+                            cout << "회사이름" << endl;
+                            cin >> company_name;
 //                            fscanf(inFp, "%s", company_name);
-//                            searchEmploymentUI.SearchByCompanyName(company_name, recruitment);
-//                            break;
+                            searchEmploymentUi.SearchByCompanyName(company_name, recruitment);
+                            break;
                         }
                         case 2:		// 4.2 채용 지원
                         {

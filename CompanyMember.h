@@ -12,5 +12,8 @@ private:
 public:
 
     CompanyMember(const string &id, const string &password, const string &companyName, int companyNumber);
+
+    string getCompanyName() const;
+    int getCompanyNumber() const;
 };
 #endif
