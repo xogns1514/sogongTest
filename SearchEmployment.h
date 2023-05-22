@@ -13,7 +13,7 @@ class SearchEmployment {
 private:
     Apply apply;
 public:
-    static void ShowEmploymentlist(string company_name, vector<Recruitment>& recruitment);
+    static void ShowEmploymentlist(const string& company_name, vector<Recruitment>& recruitment);
     Apply addNewApply(int companyNumber, string applierID, vector<Recruitment>& recruitment);
 };
 

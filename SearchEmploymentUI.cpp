@@ -5,7 +5,7 @@ SearchEmploymentUI::SearchEmploymentUI(){
 }
 
 // 4.1 ä�� ���� �˻�
- void SearchEmploymentUI::SearchByCompanyName(string company_name, vector<Recruitment>& recruitment) {
+ void SearchEmploymentUI::SearchByCompanyName(const string& company_name, vector<Recruitment>& recruitment) {
     SearchEmployment::ShowEmploymentlist(company_name, recruitment);
 }
 

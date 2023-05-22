@@ -10,7 +10,7 @@ private:
     SearchEmployment searchEmployment;
 public:
     SearchEmploymentUI();
-    static void SearchByCompanyName(string company_name, vector<Recruitment> &recruitment);
+    static void SearchByCompanyName(const string& company_name, vector<Recruitment> &recruitment);
     Apply ApplyEmployment(int companyNumber, string applierID, vector<Recruitment>& recruitment);
 };
 
