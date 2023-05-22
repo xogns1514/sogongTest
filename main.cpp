@@ -62,7 +62,7 @@ void doTask() {
 
     vector<Recruitment> recruitment;
 
-    Member currentMember("none", "0", "0"); // 로그인 후 여기에 현재 로그인 중인 회원 저장
+    Member currentMember("none", "0", 0, "0", "0"); // 로그인 후 여기에 현재 로그인 중인 회원 저장
 
     while (!isProgramExit) {
         // 입력 파일에서 메뉴 숫자 2개 읽기

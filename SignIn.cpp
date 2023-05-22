@@ -13,12 +13,13 @@ void SignIn::putUserDetails(vector<Member> &members, Member &currentMember, std:
                 currentMember = i;
                 currentMember.setStatus(true);
                 cout << i.getID() << " " << i.getPassword() << endl;
-                cout << "현재 로그인 회원: " << currentMember.getName() << currentMember.getID() << endl;
-                break;
+                cout << "현재 로그인 회원: " <<
+                "이름:" << currentMember.getName() <<" "
+                "id: " << currentMember.getID() << endl;
+                return;
             }
 
         }
-
-        else cout << "등록된 회원 없음" << endl;
     }
+    cout << "등록된 회원 없음" << endl;
 }

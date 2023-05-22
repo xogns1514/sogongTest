@@ -9,11 +9,13 @@ void SearchEmployment::ShowEmploymentlist(const string& company_name, vector<Rec
     {
         tuple<string, int, string, int, string> a;
         a = recruitment[i].getRecruiment();
-        cout << "11" << endl;
         if (get<0>(a) == company_name)
         {
-            cout << "asd" << endl;
-            cout << get<0>(a) << get<1>(a) << get<2>(a) << get<3>(a) << get<4>(a) << endl;
+            cout << get<0>(a) << " "
+                    << get<1>(a) << " "
+                            << get<2>(a) << " "
+                                    << get<3>(a) << " "
+                                            << get<4>(a) << endl;
         }
     }
 }

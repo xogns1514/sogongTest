@@ -5,12 +5,8 @@
 #include "Member.h"
 
 class GeneralMember : public Member{
-private:
-    string name;
-    int residentId;
-
 public:
-    GeneralMember(const string &id, const string &password, const string &name, const int &residentId);
+    GeneralMember (const string& name, const int& number, const string& id, const string& password);
 
     string getType() const;
 };

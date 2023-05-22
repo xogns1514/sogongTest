@@ -6,8 +6,7 @@
 
 class CompanyMember : public Member{
 public:
-
-    CompanyMember(const string &id, const string &password, const string &name, int number);
+    CompanyMember (const string& name, const int& number, const string& id, const string& password);
 
     int getCompanyNumber() const;
 
