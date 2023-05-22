@@ -83,7 +83,7 @@ void doTask() {
                         string id;
                         string password;
                         cin >> devideMemberType >> name >> number >> id >> password;
-                        signUpUi.putUserDetails(devideMemberType, name, number, id, password);
+                        signUpUi.putUserDetails(member, devideMemberType, name, number, id, password);
                         break;
                     }
                     case 2:		// 1.2 회원 탈퇴

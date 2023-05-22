@@ -2,6 +2,7 @@
 #define SIGNUP_H
 
 #include <iostream>
+#include "Member.h"
 
 using namespace std;
 /*
@@ -9,7 +10,7 @@ using namespace std;
  */
 class SignUp {
 public:
-    void putUserDetails(int devideMemberType, string name, int number, string id, string password);
+    static void putUserDetails(vector<Member>& member, int devideMemberType, string name, int number, string id, string password);
 };
 
 
