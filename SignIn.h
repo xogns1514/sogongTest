@@ -9,7 +9,8 @@
  */
 class SignIn {
 public:
-    string putUserDetails(string id, string password);
+
+    static void putUserDetails(vector<Member>& members, Member& currentMember, string id, string password);
 };
 
 

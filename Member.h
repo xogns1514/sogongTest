@@ -21,9 +21,7 @@ public:
     void setStatus(bool status);
 
     //ID, Password validation
-    bool ValidateMember(const string& inputId, const string& inputPassword);
-
-    string validate();
+    bool validate(vector<Member>& members, const string& inputId, const string& inputPassword);
 
     void saveMember(int i);
     void deleteMember();

@@ -105,7 +105,7 @@ void doTask() {
                         cin >> id >> password;
                         currentMember = Member(id, password);
                         currentMember.setStatus(true);
-                        signInUi.putUserDetails(id, password);
+                        signInUi.putUserDetails(member, currentMember,  id, password);
                         break;
                     }
                     case 2:		// 2.2 로그아웃

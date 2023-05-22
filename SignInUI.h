@@ -13,7 +13,7 @@ private:
 
 public:
     SignInUI();
-    void putUserDetails(string id, string password);
+    void putUserDetails(vector<Member>& member, Member& currentMember, string id, string password);
 };
 
 
