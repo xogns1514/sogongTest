@@ -6,10 +6,12 @@
 #include "SignOutUI.h"
 #include "WithDrawalUI.h"
 
+
 #include "AddRecruitmentUI.h"
 #include "ShowRecruitmentUI.h"
 
-#include "SearchEmploymentUI.h"
+#include "SearchRecruitmentUI.h"
+#include "ShowApplyInformationUI.h"
 
 #include "Member.h"
 
@@ -34,8 +36,8 @@ SignOutUI signOutUi;
 WithDrawalUI withDrawalUi;
 AddRecruitmentUI addRecruitmentUi;
 ShowRecruitmentUI showRecruitmentUi;
-SearchEmploymentUI searchEmploymentUi;
-
+SearchRecruitmentUI searchRecruitmentUi;
+ShowApplyInformationUI showApplyInformationUI;
 
 
 int main() {
@@ -57,10 +59,17 @@ void doTask() {
 
 
     vector<Member> member;
-    vector<CompanyMember> companyMembers;
-    vector<GeneralMember> generalMembers;
-
     vector<Recruitment> recruitment;
+    vector<Apply> apply;
+
+    // 테스트 코드임 ----------------------------------------------------------
+    Recruitment newRecruitment("Samsung", 1234, "qwer", 30, "12/34/56");
+    recruitment.push_back(newRecruitment);
+    Recruitment newRecruitment2("LG", 9876, "qwer", 100, "12/34/56");
+    recruitment.push_back(newRecruitment2);
+    Recruitment newRecruitment3("Apple", 4567, "qwer", 50, "12/34/56");
+    recruitment.push_back(newRecruitment3);
+    // 테스트 코드임 ----------------------------------------------------------
 
     Member currentMember("none", "0", 0, "0", "0"); // 로그인 후 여기에 현재 로그인 중인 회원 저장
 
@@ -142,33 +151,29 @@ void doTask() {
                             cout << "회사이름" << endl;
                             cin >> company_name;
 //                            fscanf(inFp, "%s", company_name);
-                            searchEmploymentUi.SearchByCompanyName(company_name, recruitment);
+                            searchRecruitmentUi.SearchByCompanyName(company_name, recruitment);
                             break;
                         }
                         case 2:		// 4.2 채용 지원
                         {
-                            // companyName, companyNumber, work, TO, deadlineDate 값들을 받아오는 함수가 필요함
-                            // apply에 지원한 현재 로그인중인 회원의 ID도 저장해야 함
-//                            int company_number;
-//                            fscanf(inFp, "%d", company_number);
-//
-//                            Apply tempApply = searchEmploymentUI.ApplyEmployment(company_number, currentMember.getID(), recruitment);
-//                            if (tempApply.getApplierID() == "-1")
-//                            {
-//                                break;
-//                            }
-//                            apply.push_back(tempApply);
+                            // companyName, companyNumber, work, TO, deadlineDate ������ �޾ƿ��� �Լ��� �ʿ���
+                            // apply�� ������ ���� �α������� ȸ���� ID�� �����ؾ� ��
+                            int companyNumber;
+                            cin >> companyNumber;
+                            // fscanf(inFp, "%d", companyNumber);
+
+                            searchRecruitmentUi.ApplyEmployment(companyNumber, currentMember.getID(), recruitment, apply);
                             break;
                         }
                         case 3:		// 4.3 지원 정보 조회
                         {
-//                            showApplyInformationUI.inquireApply(currentMember.getID(), apply);
+                            showApplyInformationUI.inquireApply(currentMember.getID(), apply);
                             break;
                         }
                         case 4:		//4.4 지원 취소
                         {
-                            //showApplyInformationUI.cancelApply()
-                            break;
+                            int companyNumber = 1234;
+                            showApplyInformationUI.cancelApply(companyNumber, currentMember.getID());                            break;
                         }
                     }
                     break;
@@ -178,7 +183,7 @@ void doTask() {
                     switch (menuLevel2) {
                         case 1:		// 5.1 지원 정보 통계
                         {
-                            //showApplyInformationUI.showWorkApply();
+                            showApplyInformationUI.showWorkApply(currentMember, currentMember.getID());
                             break;
                         }
                     }
