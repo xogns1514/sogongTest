@@ -20,19 +20,24 @@ void ShowApplyInformationUI::inquireApply(string memberID, vector<Apply>& apply)
 /*
 * 4.4 지원 취소 입력
 */
-void ShowApplyInformationUI::cancelApply(int companyNumber, string applierID) {
+void ShowApplyInformationUI::cancelApply(string applierID, vector<Apply>& apply) {
     cout << "4.4. 지원 취소" << endl;
-    showApplyInformation.cancelApply(companyNumber, applierID);
+
+    int companyNumber;
+    cin >> companyNumber;
+    string result = showApplyInformation.cancelApply(companyNumber, applierID, apply);
+
+    cout << result << endl;
 }
 
 /*
 * 5.1 지원 정보 통계 입력
 */
-void ShowApplyInformationUI::showWorkApply(Member member, string ID) {
+void ShowApplyInformationUI::showWorkApply(Member member, string id, string companyName, vector<Apply>& apply, vector<Recruitment>& recruitment) {
     cout << "5.1. 지원 정보 통계" << endl;
-    map<string, int> countByWork = showApplyInformation.showWorkApply(member, ID);
+    map<string, int> countByWork = showApplyInformation.showWorkApply(member, id, companyName,apply, recruitment);
 
     for (map<string, int>::iterator it = countByWork.begin(); it != countByWork.end(); it++) {
-        cout << "< " << it->first << " " << it->second << endl;
+        cout << "> " << it->first << " " << it->second << endl;
     }
 }

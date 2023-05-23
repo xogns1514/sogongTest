@@ -17,6 +17,6 @@ public:
     ShowApplyInformation() {};
     ShowApplyInformation(vector<Apply>& apply, vector<Recruitment>& recruitment);
     vector<tuple<string, int, string, int, string, string>> showApply(string memberID, vector<Apply>& apply);// 지원 정보 조회
-    void cancelApply(int companyNumber, string applierID); // 지원 취소
-    map<string, int> showWorkApply(Member member, string ID);   // 지원 정보 통계
+    string cancelApply(int companyNumber, string applierID, vector<Apply>& apply); // 지원 취소
+    map<string, int> showWorkApply(Member member, string id, string companyName, vector<Apply>& apply, vector<Recruitment>& recruitment);   // 지원 정보 통계
 };

@@ -22,8 +22,8 @@ string Apply::getWriterID() {
     return writerID;
 }
 
-
-void Apply::setApply(string _companyName, int _companyNumber, string _work, int _TO, string _deadlineDate, string _applier) {
+void Apply::setApply(std::string _companyName, int _companyNumber, std::string _work, int _TO, std::string _deadlineDate,
+                     std::string _applier) {
     this->companyName = _companyName;
     this->companyNumber = _companyNumber;
     this->work = _work;

@@ -170,8 +170,8 @@ void doTask() {
                         }
                         case 4:		//4.4 지원 취소
                         {
-                            int companyNumber = 1234;
-                            showApplyInformationUI.cancelApply(companyNumber, currentMember.getID());                            break;
+                            showApplyInformationUI.cancelApply(currentMember.getID(), apply);
+                            break;
                         }
                     }
                     break;
@@ -181,7 +181,7 @@ void doTask() {
                     switch (menuLevel2) {
                         case 1:		// 5.1 지원 정보 통계
                         {
-                            showApplyInformationUI.showWorkApply(currentMember, currentMember.getID());
+                            showApplyInformationUI.showWorkApply(currentMember, currentMember.getID(),currentMember.getName(), apply, recruitment);
                             break;
                         }
                     }
