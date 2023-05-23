@@ -33,6 +33,6 @@ void ShowApplyInformationUI::showWorkApply(Member member, string ID) {
     map<string, int> countByWork = showApplyInformation.showWorkApply(member, ID);
 
     for (map<string, int>::iterator it = countByWork.begin(); it != countByWork.end(); it++) {
-        cout << it->first << " " << it->second << endl;
+        cout << "< " << it->first << " " << it->second << endl;
     }
 }

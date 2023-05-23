@@ -34,10 +34,10 @@ vector<tuple<string, int, string, int, string, string>> ShowApplyInformation::sh
 */
 void ShowApplyInformation::cancelApply(int companyNumber, string applierID) {
 
-    for (int i = 0; i < sizeof(applies); i++) {
-        // ���� ��� �� ���� �α����� ȸ���� �����Ͽ�����
-        // �Է¹��� ����� ��ȣ�� ��ġ�ϴ� ���� ��ü�� ��� �ش� ��ü�� ����
-        if (applies[i].getCompanyNumber() == companyNumber && applies[i].getApplierID().compare(applierID)) {
+    for (int i = 0; i < applies.size(); i++) {
+        // 지원 목록 중 현재 로그인한 회원이 지원하였으며
+        // 입력받은 사업자 번호와 일치하는 지원 객체인 경우 해당 객체를 삭제
+        if (applies[i].getCompanyNumber() == companyNumber && applies[i].getApplierID().compare(applierID) == 0) {
             cout << applies[i].getCompanyName() << " " << companyNumber << " " << applies[i].getWork() << endl;
             applies[i].cancelApply();
         }
@@ -52,11 +52,11 @@ map<string, int> ShowApplyInformation::showWorkApply(Member member, string ID) {
     map<string, int>::iterator it;   // map을 순회하기 위한 iterator 변수
 
     // 회사 회원인 경우
-    if (typeid(member) == typeid(CompanyMember)) {
+    if (member.getType() == "CompanyMember") {
 
-        for (int i = 0; i < sizeof(applies); i++) {
+        for (int i = 0; i < applies.size(); i++) {
             // 현재까지 등록한 모든 채용 정보에 대해 업무별 지원자 수 출력
-            if (applies[i].getWriterID().compare(ID)) {
+            if (applies[i].getWriterID().compare(ID) == 0) {
                 it = countByWork.find(applies[i].getWork());
                 // 해당 업무가 map에 없는 경우
                 if (it == countByWork.end()) {
@@ -73,10 +73,10 @@ map<string, int> ShowApplyInformation::showWorkApply(Member member, string ID) {
         // 일반 회원인 경우
     else {
 
-        for (int i = 0; i < sizeof(applies); i++) {
+        for (int i = 0; i < applies.size(); i++) {
 
             // 본인이 지원한 정보에 대해 업무별 지원 횟수 출력
-            if (applies[i].getApplierID().compare(ID)) {
+            if (applies[i].getApplierID().compare(ID) == 0) {
                 it = countByWork.find(applies[i].getWork());
 
                 // 해당 업무가 map에 없는 경우

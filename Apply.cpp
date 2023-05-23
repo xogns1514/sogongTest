@@ -37,9 +37,9 @@ tuple<string, int, string, int, string, string> Apply::getApply() {
 }
 
 /*
-* ���� ��� ���
-* �Ϲ� ȸ���� ���� �������� ä�� ������ ���� ���� ���
-* �ش� ��ü ����
+* 지원 취소 기능
+* 일반 회원이 현재 진행중인 채용 정보에 대해 지원 취소
+* 해당 객체 삭제
 */
 void Apply::cancelApply() {
     delete this;
