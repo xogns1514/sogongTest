@@ -8,14 +8,15 @@ string SignIn::putUserDetails(vector<Member> &members, Member &currentMember, st
 
     for(Member i : members){
         //회원가입 되어있음
-        if(i.getID().compare(id) == 0){
+        if(i.getID().compare(id) == 0 && i.getPassword() == password){
                 currentMember = i;
                 currentMember.setStatus(true);
 
-                string result = "> " + id + " " + password;
+                string result = "> " + currentMember.getID() + " " + currentMember.getPassword();
                 return result;
         }
     }
     //회원가입 되어있지 않음
-    cout << "등록된 회원 없음" << endl;
+    string result = "등록된 회원 없음";
+    return result;
 }

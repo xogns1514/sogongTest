@@ -53,21 +53,26 @@ map<string, int> ShowApplyInformation::showWorkApply(Member member, string ID) {
 
     // 회사 회원인 경우
     if (member.getType() == "CompanyMember") {
-
         for (int i = 0; i < applies.size(); i++) {
             // 현재까지 등록한 모든 채용 정보에 대해 업무별 지원자 수 출력
             if (applies[i].getWriterID().compare(ID) == 0) {
+                cout << "??" << endl;
                 it = countByWork.find(applies[i].getWork());
                 // 해당 업무가 map에 없는 경우
                 if (it == countByWork.end()) {
-                    countByWork[applies[i].getWork()] = 1;   // map에 추가
+                    countByWork[applies[i].getWork()] = 1;
+                    cout << "!!" << endl;
+// map에 추가
                 }
                     // 해당 업무가 map에 있는 경우
                 else {
-                    ++countByWork[applies[i].getWork()];   // 기존 value 값을 1 증가
+                    ++countByWork[applies[i].getWork()];
+                    cout << "$$!" << endl;
+// 기존 value 값을 1 증가
                 }
             }
         }
+        return countByWork;
     }
 
         // 일반 회원인 경우
@@ -76,7 +81,7 @@ map<string, int> ShowApplyInformation::showWorkApply(Member member, string ID) {
         for (int i = 0; i < applies.size(); i++) {
 
             // 본인이 지원한 정보에 대해 업무별 지원 횟수 출력
-            if (applies[i].getApplierID().compare(ID) == 0) {
+            if (applies[i].getApplierID() == ID) {
                 it = countByWork.find(applies[i].getWork());
 
                 // 해당 업무가 map에 없는 경우
@@ -90,7 +95,6 @@ map<string, int> ShowApplyInformation::showWorkApply(Member member, string ID) {
 
             }
         }
-
         return countByWork;
     }
 }
