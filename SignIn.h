@@ -12,7 +12,7 @@
 class SignIn {
 public:
 
-    static void putUserDetails(vector<Member>& members, Member& currentMember, string id, string password);
+    static string putUserDetails(vector<Member>& members, Member& currentMember, string id, string password);
 };
 
 

@@ -1,15 +1,14 @@
 #include <iostream>
 #include "Member.h"
 
-Member::Member(const string& type, const string& id, const string& password) : type(type), id(id), password(password), status(false){};
-
 Member::Member(const std::string &type, const std::string &name, const int &number, const std::string &id,
                const std::string &password)
                :type(type), name(name), number(number), id(id), password(password){};
 
-string Member::getName() { return name; }
+//getter
+string Member::getName() const { return name; }
 
-int Member::getNumber() { return number; }
+int Member::getNumber() const { return number; }
 
 string Member::getID() const { return id; }
 
@@ -18,6 +17,7 @@ string Member::getPassword() const { return password; }
 bool Member::getStatus() const { return status; }
 void Member::setStatus(bool status) { this->status = status; }
 
+//회원가입 되어있는지 확인
 bool Member::validate(vector<Member>& members, const std::string &inputId, const std::string &inputPassword) {
     for(Member i : members){
         if(i.getID() == inputId){

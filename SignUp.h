@@ -10,7 +10,7 @@ using namespace std;
  */
 class SignUp {
 public:
-    static void putUserDetails(vector<Member>& member, int devideMemberType, string name, int number, string id, string password);
+    static string putUserDetails(vector<Member>& member, int devideMemberType, string name, int number, string id, string password);
 };
 
 

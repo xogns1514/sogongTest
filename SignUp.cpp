@@ -5,24 +5,33 @@
 /*
  * 회원가입 함수
  */
-void SignUp::putUserDetails(vector<Member>& member, int devideMemberType, string name, int number, string id, string password)
+string SignUp::putUserDetails(vector<Member>& member, int devideMemberType, string name, int number, string id, string password)
 {
     // 회사회원 가입
-    if (devideMemberType == 0)
+    if (devideMemberType == 1)
     {
-        Member companyMember =  CompanyMember(id, password, name, number);
+        Member companyMember =  CompanyMember(name, number, id, password);
         companyMember.saveMember(devideMemberType);
         member.push_back(companyMember);
-        cout << "회사회원 가입 완료" << companyMember.getName() << " " <<
-        companyMember.getNumber() << " " <<
-        companyMember.getID() << " " <<
-        companyMember.getPassword() << endl;
+
+        string result = "> 1 " + name + " " +
+                        to_string(number) + " "+
+                        id + " " +
+                        password;
+        return result;
     }
         // 일반회원 가입
-    else if (devideMemberType == 1)
+    else if (devideMemberType == 2)
     {
-        Member generalMember = GeneralMember(id, password, name, number);
+        Member generalMember = GeneralMember(name, number, id, password);
         generalMember.saveMember(devideMemberType);
         member.push_back(generalMember);
+
+        string result = "> 2 " + name + " " +
+                        to_string(number) + " "+
+                        id + " " +
+                        password;
+        return result;
     }
 }
+

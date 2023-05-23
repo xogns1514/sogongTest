@@ -8,5 +8,8 @@ SignUpUI::SignUpUI() : signUp(){}
 
 void SignUpUI::putUserDetails(vector<Member>& member, int devideMemberType, string name, int number, string id, string password)
 {
-    SignUp::putUserDetails(member, devideMemberType, name, number, id, password);
+    cout << "1.1. 회원가입" << endl;
+
+    string result = SignUp::putUserDetails(member, devideMemberType, name, number, id, password);
+    cout << result << endl;
 }

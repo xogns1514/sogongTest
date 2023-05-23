@@ -3,22 +3,20 @@
 /*
  * 로그인 함수
  */
-void SignIn::putUserDetails(vector<Member> &members, Member &currentMember, std::string id, std::string password) {
+string SignIn::putUserDetails(vector<Member> &members, Member &currentMember, std::string id, std::string password) {
     // 로그인
 
     for(Member i : members){
         //회원가입 되어있음
-        if(i.getID().compare(id) == 0){
-            if(i.getType() == "CompanyMember"){
+        if(i.getID().compare(id) == 0 && i.getPassword() == password){
                 currentMember = i;
                 currentMember.setStatus(true);
-                cout << i.getID() << " " << i.getPassword() << endl;
-                cout << "현재 로그인 회원: " << currentMember.getName() << currentMember.getID() << endl;
-                break;
-            }
 
+                string result = "> " + currentMember.getID() + " " + currentMember.getPassword();
+                return result;
         }
-
-        else cout << "등록된 회원 없음" << endl;
     }
+    //회원가입 되어있지 않음
+    string result = "등록된 회원 없음";
+    return result;
 }
