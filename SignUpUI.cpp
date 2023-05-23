@@ -10,5 +10,6 @@ void SignUpUI::putUserDetails(vector<Member>& member, int devideMemberType, stri
 {
     cout << "1.1. 회원가입" << endl;
 
-    SignUp::putUserDetails(member, devideMemberType, name, number, id, password);
+    string result = SignUp::putUserDetails(member, devideMemberType, name, number, id, password);
+    cout << result << endl;
 }

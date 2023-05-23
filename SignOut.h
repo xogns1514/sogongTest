@@ -5,6 +5,6 @@
 
 class SignOut{
 public:
-    static void signOut(Member& member);
+    static string signOut(Member& member);
 };
 #endif

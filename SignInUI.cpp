@@ -7,5 +7,7 @@ SignInUI::SignInUI() : signIn(){}
  */
 void SignInUI::putUserDetails(vector<Member>& member, Member& currentMember, string id, string password)
 {
-    SignIn::putUserDetails(member,currentMember, id, password);
+    cout << "2.1. 로그인" << endl;
+    string result = SignIn::putUserDetails(member,currentMember, id, password);
+    cout << result << endl;
 }

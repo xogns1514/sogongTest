@@ -11,7 +11,7 @@ bool compareName(const Apply& n1, const Apply& n2) {
     return n1.getCompanyName() < n2.getCompanyName();
 };
 
-// �Ϲ� ȸ�� ������ ���� ������ ����ϴ� �Լ�
+// 일반 회원 본인의 지원 정보를 출력하는 함수
 vector<tuple<string, int, string, int, string, string>> ShowApplyInformation::showApply(string memberID, vector<Apply>& apply) {
 
     vector<tuple<string, int, string, int, string, string>> saveApply;
@@ -30,7 +30,7 @@ vector<tuple<string, int, string, int, string, string>> ShowApplyInformation::sh
 }
 
 /*
-* ���� ��� ����� �ϴ� �Լ�
+* 지원 취소 기능을 하는 함수
 */
 void ShowApplyInformation::cancelApply(int companyNumber, string applierID) {
 
@@ -45,47 +45,47 @@ void ShowApplyInformation::cancelApply(int companyNumber, string applierID) {
 }
 
 /*
-* ���� ���� ��� ������ �������� �Լ�
+* 지원 정보 통계 정보를 가져오는 함수
 */
 map<string, int> ShowApplyInformation::showWorkApply(Member member, string ID) {
-    map<string, int> countByWork;   // ������ ���� Ƚ���� �����ϴ� map ����
-    map<string, int>::iterator it;   // map�� ��ȸ�ϱ� ���� iterator ����
+    map<string, int> countByWork;   // 업무별 지원 횟수를 저장하는 map 변수
+    map<string, int>::iterator it;   // map을 순회하기 위한 iterator 변수
 
-    // ȸ�� ȸ���� ���
+    // 회사 회원인 경우
     if (typeid(member) == typeid(CompanyMember)) {
 
         for (int i = 0; i < sizeof(applies); i++) {
-            // ������� ����� ��� ä�� ������ ���� ������ ������ �� ���
+            // 현재까지 등록한 모든 채용 정보에 대해 업무별 지원자 수 출력
             if (applies[i].getWriterID().compare(ID)) {
                 it = countByWork.find(applies[i].getWork());
-                // �ش� ������ map�� ���� ���
+                // 해당 업무가 map에 없는 경우
                 if (it == countByWork.end()) {
-                    countByWork[applies[i].getWork()] = 1;   // map�� �߰�
+                    countByWork[applies[i].getWork()] = 1;   // map에 추가
                 }
-                    // �ش� ������ map�� �ִ� ���
+                    // 해당 업무가 map에 있는 경우
                 else {
-                    ++countByWork[applies[i].getWork()];   // ���� value ���� 1 ����
+                    ++countByWork[applies[i].getWork()];   // 기존 value 값을 1 증가
                 }
             }
         }
     }
 
-        // �Ϲ� ȸ���� ���
+        // 일반 회원인 경우
     else {
 
         for (int i = 0; i < sizeof(applies); i++) {
 
-            // ������ ������ ������ ���� ������ ���� Ƚ�� ���
+            // 본인이 지원한 정보에 대해 업무별 지원 횟수 출력
             if (applies[i].getApplierID().compare(ID)) {
                 it = countByWork.find(applies[i].getWork());
 
-                // �ش� ������ map�� ���� ���
+                // 해당 업무가 map에 없는 경우
                 if (it == countByWork.end()) {
-                    countByWork[applies[i].getWork()] = 1;   // map�� �߰�
+                    countByWork[applies[i].getWork()] = 1;   // map에 추가
                 }
-                    // �ش� ������ map�� �ִ� ���
+                    // 해당 업무가 map에 있는 경우
                 else {
-                    ++countByWork[applies[i].getWork()];   // ���� value ���� 1 ����
+                    ++countByWork[applies[i].getWork()];   // 기존 value 값을 1 증가
                 }
 
             }

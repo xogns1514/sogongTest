@@ -2,7 +2,7 @@
 #include "ShowApplyInformation.h"
 
 /*
-* ���� ����(Apply)�� ȭ�鿡 ����ϴ� boundary class
+* 지원 정보(Apply)를 화면에 출력하는 boundary class
 */
 class ShowApplyInformationUI {
 private:

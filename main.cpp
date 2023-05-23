@@ -41,7 +41,6 @@ ShowApplyInformationUI showApplyInformationUI;
 
 
 int main() {
-    cout << "Hello, World!" << std::endl;
 
     // 파일 입출력을 위한 초기화
     inFp = fopen(INPUT_FILE_NAME, "r+");
@@ -77,7 +76,6 @@ void doTask() {
         // 입력 파일에서 메뉴 숫자 2개 읽기
 //        fscanf(inFp, "%d %d ", &menuLevel1, &menuLevel2);
 
-        cout << "test입력" << endl;
         cin >> menuLevel1 >> menuLevel2; //test용 입력
 
         // 메뉴 구분 및 해당 연산 수행
