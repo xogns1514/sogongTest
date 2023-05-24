@@ -11,6 +11,6 @@ using namespace std;
  */
 class WithDrawal {
 public:
-    void clickWithdrawal(Member member);
+    string clickWithdrawal(Member currentMember, vector<Member>& members);
 };
 #endif
