@@ -13,7 +13,7 @@ private:
 
 public:
     WithDrawalUI();
-    void clickWithdrawal(Member member);
+    void clickWithdrawal(Member currentMember, vector<Member>& members);
 };
 
 

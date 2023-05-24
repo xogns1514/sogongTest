@@ -32,7 +32,7 @@ void Member::saveMember(int i) {
 }
 
 void Member::deleteMember() {
-
+    delete this;
 }
 
 string Member::getType() const {

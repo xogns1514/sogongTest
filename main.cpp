@@ -98,7 +98,7 @@ void doTask() {
                     }
                     case 2:		// 1.2 회원 탈퇴
                     {
-                        withDrawalUi.clickWithdrawal(currentMember);
+                        withDrawalUi.clickWithdrawal(currentMember, member);
                         break;
                     }
                 }
